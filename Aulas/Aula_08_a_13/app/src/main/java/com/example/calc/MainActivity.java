@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.AlertDialog;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
             vtotal+=vfaca * Double.parseDouble(et_faca.getText().toString());
         }
         tv_resultado.setText("Valor total: R$" + vtotal);
-        Toast.makeText(this, "Valor da locação calculado", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Valor da locação calculado", Toast.LENGTH_LONG).show();
+        AlertDialog.Builder cxMsg= new AlertDialog.Builder(this);
+        cxMsg.setMessage("Valor da locação calculado");
+        cxMsg.setNeutralButton("OK",null);
+        cxMsg.show();
     }
 
 }
