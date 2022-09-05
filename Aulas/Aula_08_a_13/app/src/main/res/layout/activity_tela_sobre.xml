@@ -13,5 +13,14 @@
         android:text="Curso Android Studio"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="320dp" />
+        tools:layout_editor_absoluteY="149dp" />
+
+    <Button
+        android:id="@+id/btn_voltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Voltar"
+        android:text="Voltar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="245dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
