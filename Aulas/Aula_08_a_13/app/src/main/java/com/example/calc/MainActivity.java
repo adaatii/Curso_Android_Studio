@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
     public void AbrirTelaSobre(View v){
         //Cria uma nova activity
         Intent it_telaSobre = new Intent(this,tela_sobre.class);
+        it_telaSobre.putExtra("p_nome","Lucas");
+        it_telaSobre.putExtra("p_vtotal",vtotal);
         startActivity(it_telaSobre);
 
         //troca o xml troca o layout da main pela tela_sobre

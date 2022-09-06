@@ -6,21 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".tela_sobre">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Curso Android Studio"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="149dp" />
-
-    <Button
-        android:id="@+id/btn_voltar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="Voltar"
-        android:text="Voltar"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="245dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Curso Android Studio"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn_voltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Voltar"
+            android:text="Voltar" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
