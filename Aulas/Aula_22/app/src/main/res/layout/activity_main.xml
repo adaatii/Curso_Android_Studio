@@ -75,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="inserirRegistro"
                 android:text="Gravar" />
 
             <Space
@@ -87,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="abrir_tela_consulta"
                 android:text="Consultar" />
 
             <Space
@@ -99,6 +101,12 @@
             android:id="@+id/btn_fechar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="fechar_tela"
             android:text="Fechar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

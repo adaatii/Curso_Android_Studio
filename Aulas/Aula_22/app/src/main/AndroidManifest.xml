@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Agenda_Curso"
         tools:targetApi="31">
         <activity
+            android:name=".Tela_Consulta"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
