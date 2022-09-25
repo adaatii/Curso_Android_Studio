@@ -1,8 +1,10 @@
 package com.example.radiobuttons;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
@@ -21,10 +23,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     Button ok;
     Button toast;
+    Button snackbar;
+    Button delete;
     RadioGroup radio_group;
     RadioButton rbtn_green;
     RadioButton rbtn_red;
@@ -35,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     ArrayAdapter adapter;
     EditText et_text;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -55,12 +62,15 @@ public class MainActivity extends AppCompatActivity {
         tbnt_Show = findViewById(R.id.tbtn_Show);
 
         toast = findViewById(R.id.btn_toast);
+        snackbar = findViewById(R.id.btn_snack);
+        delete = findViewById(R.id.btn_delete);
 
         spinner = findViewById(R.id.spinner_contry);
         adapter = ArrayAdapter.createFromResource(this, R.array.countries
                 , android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
@@ -73,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
         tbnt_Show.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -108,5 +117,47 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Essa é uma Toast message", Toast.LENGTH_LONG).show();
             }
         });
+
+        snackbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(layout, "Essa é uma Snackbar Message", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Fechar", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).show();
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogMessage();
+            }
+        });
+
+
     }
+
+    private void showDialogMessage() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Delete").setMessage("Deseja deletar o texto ?")
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        et_text.setText("");
+                    }
+                }).show();
+        alertDialog.create();
+    }
+
+
 }
