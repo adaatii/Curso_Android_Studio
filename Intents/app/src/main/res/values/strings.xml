@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Intents</string>
+    <string name="button">Button</string>
+    <string name="write_your_name">Write your name</string>
+    <string name="go_to_another_activity">Go to another Activity</string>
+    <string name="name">Name</string>
+</resources>
